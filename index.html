@@ -127,5 +127,107 @@
     </div>
 </nav>
 
+<!--Sign In form-->
+<div id="signInForm">
+    <main class="main-content  mt-0">
+        <div class="page-header align-items-start min-vh-100"
+             style="background-image:
+           url('images/shoeShopBackground-img.jpg');">
+            <span class="mask bg-gradient-dark opacity-6"></span>
+            <div class="container my-auto">
+                <div class="row">
+                    <div class="col-lg-4 col-md-8 col-12 mx-auto">
+                        <div class="card z-index-0 fadeIn3 fadeInBottom">
+                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                                <div class="bg-dark-blue  shadow-dark border-radius-lg py-3 pe-1">
+                                    <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Sign In</h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form role="form" class="text-start">
+                                    <div class="input-group input-group-outline my-3">
+                                        <label class="form-label">Email</label>
+                                        <input id="txtEmail" type="email" class="form-control">
+                                    </div>
+                                    <div class="input-group input-group-outline mb-3">
+                                        <label class="form-label">Password</label>
+                                        <input id="txtPassword" type="password" class="form-control">
+                                    </div>
+                                    <div class="form-check form-switch d-flex align-items-center mb-3">
+                                        <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                                        <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
+                                    </div>
+                                    <div class="text-center">
+                                        <button id="btnLogin" type="button" class="btn bg-dark-blue w-100 my-4 mb-2">Sign In</button>
+                                    </div>
+                                    <p class="mt-4 text-sm text-center">
+                                        Don't have an account?
+                                        <a class="text-dark text-gradient font-weight-bold">Sign up</a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!--Side navigation section-->
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+        <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+        <a class="navbar-brand m-0">
+            <span class="ms-1 font-weight-bold text-white">Hello Shoes Pvt. Ltd</span>
+        </a>
+    </div>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a id="btnDashboard" class="nav-link text-white dashboardFrom nav-link-color ">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">dashboard</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a id="btnEmployee" class="nav-link text-white nav-link-color " onclick="loadData()">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-users" style="color: #ffffff;"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Employee</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a id="btnCustomer" class="nav-link text-white nav-link-color " onclick="loadCustomerData()">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-users" style="color: #ffffff;"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Customer</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a id="btnInventory" class="nav-link text-white nav-link-color " onclick="loadItemData()">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-cart-flatbed" style="color: #ffffff;"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Inventory</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a id="btnSingOut" class="nav-link text-white">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">login</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
+
 </body>
 </html>
