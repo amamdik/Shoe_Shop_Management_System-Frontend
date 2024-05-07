@@ -1173,6 +1173,121 @@
     </main>
 </div>
 
+<!--Inventory Section-->
+<div id="inventoryForm">
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg navBar-padding">
+        <div class="testbox">
+            <form>
+                <div class="banner">
+                    <h1>Inventory Manage Form</h1>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label for="name" class="form-label">Item Name</label>
+                            <input name="itemName" type="text" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <input name="itemPic" type="file" class="form-control" onchange="itemImageUploaded()">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Item Quantity</label>
+                            <input name="itemQuantity" type="number" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <label class="form-label">Category</label>
+                            <input name="itemCategory" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
 
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Size</label>
+                            <input name="itemSize" type="number" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <label class="form-label">Unit Price-Sale</label>
+                            <input name="itemUnitPrice-Sale" type="number" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Unit Price-Buy</label>
+                            <input name="itemUnitPrice-Buy" type="number" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <label class="form-label">Expected Profit</label>
+                            <input name="itemExpectedProfit" type="number" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Profit Margin</label>
+                            <input name="itemProfitMargin" type="number" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <label class="form-label">Status</label>
+                            <input name="itemStatus" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-block mt-6">
+                    <button id="btnItemSave" type="button">Save</button>
+                    <button id="btnItemUpdate" type="button">Update</button>
+                    <button id="btnItemreset" type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+        <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card my-4">
+                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                                    <h6 class="text-white text-capitalize ps-3">Inventory table</h6>
+                                </div>
+                            </div>
+                            <div class="card-body px-0 pb-2">
+                                <div class="table-responsive p-0">
+                                    <table class="table align-items-center mb-0">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-3">Picture</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Quantity</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Category</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Size</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Unite Price-Sale</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Unite Price-Buy</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Expected Profit</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Profit Margin</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Delete</th>
+                                            <th class="text-secondary opacity-7"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="item-tbl-body"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </main>
+</div>
 </body>
 </html>
