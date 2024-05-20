@@ -281,8 +281,8 @@ function deleteCustomer(event) {
         text: "You want delete row?",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#807f80',
+        cancelButtonColor: '#ea0a03',
         confirmButtonText: 'Yes'
     }).then((result) => {
         if (result.isConfirmed) {

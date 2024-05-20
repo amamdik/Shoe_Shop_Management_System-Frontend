@@ -1186,6 +1186,128 @@
     </main>
 </div>
 
+<!--Supplier Section-->
+<div id="suppierForm">
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg navBar-padding">
+        <div class="testbox">
+            <form>
+                <div class="banner">
+                    <h1 class="text-dark-blue">Supplier Manage Form</h1>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label for="name" class="form-label">Name</label>
+                            <input id="supplierName" name="name" type="text" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <select name="category" aria-label="Default select example">
+                                <option selected>Select Category</option>
+                                <option value="INTERNATIONAL">INTERNATIONAL</option>
+                                <option value="LOCAL">LOCAL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Address 1</label>
+                            <input name="supplierAddress1" type="text" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <label class="form-label">Address 2</label>
+                            <input name="supplierAddress2" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Address 3</label>
+                            <input name="supplierAddress3" type="text" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <label class="form-label">Address 4</label>
+                            <input name="supplierAddress4" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Address 5</label>
+                            <input name="supplierAddress5" type="text" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <label class="form-label">Address 6</label>
+                            <input name="supplierAddress6" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Contact 1</label>
+                            <input name="supplierContact1" type="text" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <label class="form-label">Contact 2</label>
+                            <input name="supplierContact2" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Email</label>
+                            <input name="supplierEmail" type="email" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-block mt-6">
+                    <button class="bg-dark-blue" id="btnSupplierSave" type="button">Save</button>
+                    <button class="bg-dark-blue" id="btnSupplierUpdate" type="button">Update</button>
+                    <button class="bg-dark-blue" id="btnSupplierReset" type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+        <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card my-4">
+                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                                <div class="bg-dark-blue shadow-dark border-radius-lg pt-4 pb-3">
+                                    <h6 class="text-white text-capitalize ps-3">Supplier table</h6>
+                                </div>
+                            </div>
+                            <div class="card-body px-0 pb-2">
+                                <div class="table-responsive p-0">
+                                    <table class="table align-items-center mb-0">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Address</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Contact</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Delete</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="supplier-tbl-body"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </main>
+</div>
+
 
 <script src="assests/js/popper.min.js"></script>
 <script src="assests/js/bootstrap.min.js"></script>
