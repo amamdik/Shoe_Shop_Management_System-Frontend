@@ -1099,7 +1099,7 @@
         <div class="testbox">
             <form>
                 <div class="banner">
-                    <h1>Inventory Manage Form</h1>
+                    <h1 class="text-dark-blue">Inventory Manage Form</h1>
                 </div>
                 <div class="item">
                     <div class="name-item">
@@ -1108,64 +1108,47 @@
                             <input name="itemName" type="text" class="form-control">
                         </div>
                         <div class="input-group input-group-outline w-lg-45 me-5">
-                            <input name="itemPic" type="file" class="form-control" onchange="itemImageUploaded()">
+                            <input name="itemPic" type="file" onchange="itemImageUploaded()">
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="name-item">
                         <div class="input-group input-group-outline w-lg-45 ms-4">
-                            <label class="form-label">Item Quantity</label>
-                            <input name="itemQuantity" type="number" class="form-control">
-                        </div>
-                        <div class="input-group input-group-outline w-lg-45 me-5">
                             <label class="form-label">Category</label>
                             <input name="itemCategory" type="text" class="form-control">
                         </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <select id="supplierIDs" aria-label="Default select example" class="form-control">
+                                <option selected>Select Supplier</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
+                <div class="question ms-4 d-flex flex-column flex-md-row">
+                    <div class="d-flex align-items-center me-md-5">
+                        <p class="me-3 mb-0 font-weight-bold">Gender</p>
+                        <div class="question-answer d-flex">
+                            <label class="me-3 mb-1"><input type="radio" value="MAN" name="inventoryGender" required> <span>Man</span></label>
+                            <label class="mb-0"><input type="radio" value="WOMEN" name="inventoryGender" required> <span>Women</span></label>
+                        </div>
+                    </div>
 
-                <div class="item">
-                    <div class="name-item">
-                        <div class="input-group input-group-outline w-lg-45 ms-4">
-                            <label class="form-label">Size</label>
-                            <input name="itemSize" type="number" class="form-control">
-                        </div>
-                        <div class="input-group input-group-outline w-lg-45 me-5">
-                            <label class="form-label">Unit Price-Sale</label>
-                            <input name="itemUnitPrice-Sale" type="number" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="name-item">
-                        <div class="input-group input-group-outline w-lg-45 ms-4">
-                            <label class="form-label">Unit Price-Buy</label>
-                            <input name="itemUnitPrice-Buy" type="number" class="form-control">
-                        </div>
-                        <div class="input-group input-group-outline w-lg-45 me-5">
-                            <label class="form-label">Expected Profit</label>
-                            <input name="itemExpectedProfit" type="number" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="name-item">
-                        <div class="input-group input-group-outline w-lg-45 ms-4">
-                            <label class="form-label">Profit Margin</label>
-                            <input name="itemProfitMargin" type="number" class="form-control">
-                        </div>
-                        <div class="input-group input-group-outline w-lg-45 me-5">
-                            <label class="form-label">Status</label>
-                            <input name="itemStatus" type="text" class="form-control">
+                    <div class="d-flex align-items-center ms-md-9">
+                        <p class="me-3 mb-0 font-weight-bold">Occasion</p>
+                        <div class="question-answer d-flex">
+                            <label class="me-3 mb-1"><input type="radio" value="Formal" name="occasion" required> <span>Formal</span></label>
+                            <label class="me-3 mb-1"><input type="radio" value="Casual" name="occasion" required> <span>Casual</span></label>
+                            <label class="me-3 mb-1"><input type="radio" value="Industrial" name="occasion" required> <span>Industrial</span></label>
+                            <label class="mb-0"><input type="radio" value="Sport" name="occasion" required> <span>Sport</span></label>
                         </div>
                     </div>
                 </div>
 
                 <div class="btn-block mt-6">
-                    <button id="btnItemSave" type="button">Save</button>
-                    <button id="btnItemUpdate" type="button">Update</button>
-                    <button id="btnItemreset" type="reset">Reset</button>
+                    <button class="bg-dark-blue" id="btnItemSave" type="button">Save</button>
+                    <button class="bg-dark-blue" id="btnItemUpdate" type="button">Update</button>
+                    <button class="bg-dark-blue" id="btnItemreset" type="reset">Reset</button>
                 </div>
             </form>
         </div>
@@ -1175,7 +1158,7 @@
                     <div class="col-12">
                         <div class="card my-4">
                             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                                <div class="bg-dark-blue shadow-dark border-radius-lg pt-4 pb-3">
                                     <h6 class="text-white text-capitalize ps-3">Inventory table</h6>
                                 </div>
                             </div>
@@ -1184,19 +1167,12 @@
                                     <table class="table align-items-center mb-0">
                                         <thead>
                                         <tr>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-3">Picture</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Quantity</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Category</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Size</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Unite Price-Sale</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Unite Price-Buy</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Expected Profit</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Profit Margin</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Delete</th>
-                                            <th class="text-secondary opacity-7"></th>
-                                        </tr>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-4">Picture</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-3">ID/Name</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Category</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Occasion</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Gender</th>
+
                                         </thead>
                                         <tbody id="item-tbl-body"></tbody>
                                     </table>
