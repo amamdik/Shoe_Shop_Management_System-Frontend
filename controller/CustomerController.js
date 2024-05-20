@@ -1,10 +1,10 @@
 $("#btnCusSave").on('click', () => {
     let name = $("#customerName").val();
-    let level = $("select[name='level']").val();
+    let level = "NEW";
     let gender = $("input[name='gender']:checked").val();
     let dob = $("#cusDob").val();
     let joinDate = $("#cusJoinDate").val();
-    let totalPoint = $("input[name='custTotalPoint']").val();
+    let totalPoint = $("input[name='cutTotalPoint']").val();
     let address1 = $("input[name='cusAddress1']").val();
     let address2 = $("input[name='cusAddress2']").val();
     let address3 = $("input[name='cusAddress3']").val();
@@ -23,7 +23,7 @@ $("#btnCusSave").on('click', () => {
         return;
     }
 
-    if (level==="Select Level"){
+    if (level==="Select Level") {
         Swal.fire({
             icon: 'error',
             title: 'Please Check Level Field',
@@ -32,7 +32,7 @@ $("#btnCusSave").on('click', () => {
         return;
     }
 
-    if (!gender){
+    if (!gender) {
         Swal.fire({
             icon: 'error',
             title: 'Please Check Gender Field',
@@ -59,7 +59,7 @@ $("#btnCusSave").on('click', () => {
         return;
     }
 
-    if (!totalPoint){
+    if (!totalPoint) {
         Swal.fire({
             icon: 'error',
             title: 'Please Check Total Point Field',
@@ -68,7 +68,7 @@ $("#btnCusSave").on('click', () => {
         return;
     }
 
-    if (!address1){
+    if (!address1) {
         Swal.fire({
             icon: 'error',
             title: 'Please Check Address 1 Field',
@@ -77,7 +77,7 @@ $("#btnCusSave").on('click', () => {
         return;
     }
 
-    if (!address2){
+    if (!address2) {
         Swal.fire({
             icon: 'error',
             title: 'Please Check Address 2 Field',
@@ -86,7 +86,7 @@ $("#btnCusSave").on('click', () => {
         return;
     }
 
-    if (!address3){
+    if (!address3) {
         Swal.fire({
             icon: 'error',
             title: 'Please Check Address 3 Field',
@@ -95,7 +95,7 @@ $("#btnCusSave").on('click', () => {
         return;
     }
 
-    if (!address4){
+    if (!address4) {
         Swal.fire({
             icon: 'error',
             title: 'Please Check Address 4 Field',
@@ -104,7 +104,7 @@ $("#btnCusSave").on('click', () => {
         return;
     }
 
-    if (!address5){
+    if (!address5) {
         Swal.fire({
             icon: 'error',
             title: 'Please Check Address 5 Field',
@@ -122,7 +122,7 @@ $("#btnCusSave").on('click', () => {
         return;
     }
 
-    if (!email){
+    if (!email) {
         Swal.fire({
             icon: 'error',
             title: 'Please Check Email Field',
@@ -131,7 +131,7 @@ $("#btnCusSave").on('click', () => {
         return;
     }
 
-    if (!recent_purchase_date_and_time){
+    if (!recent_purchase_date_and_time) {
         Swal.fire({
             icon: 'error',
             title: 'Please Check Recent Purchase Date And Time Field',
@@ -201,7 +201,7 @@ $("#btnCusSave").on('click', () => {
     loadCustomerData();
 })
 
-//load data
+//Load Data
 function loadCustomerData() {
     $.ajax({
         url: "http://localhost:8080/Scope/api/v1/customer",
@@ -217,12 +217,12 @@ function loadCustomerData() {
         error: function (xhr, status, error) {
             console.error("Error:", xhr.responseText);
         }
-    })
+    });
 }
 
-const setValue = (response) =>{
+const setValue = (response) => {
     $("#customer-tbl-body").empty();
-    response.map((response) =>{
+    response.map((response) => {
 
         let recode = `<tr>
                                 <td>
@@ -230,6 +230,7 @@ const setValue = (response) =>{
                                         <div class="d-flex flex-column justify-content-center">
                                             <h6 class="mb-0 text-sm">${response.name}</h6>
                                             <p id="email" class="text-xs text-secondary mb-0">${response.email}</p>
+                                            <p class="text-xs text-secondary mb-0">${response.level}</p>
                                         </div>
                                     </div>
                                 </td>
@@ -267,13 +268,13 @@ const setValue = (response) =>{
     })
 }
 
-//delete employee
+//Delete Employee
 function deleteCustomer(event) {
     event.stopPropagation();
     let email = $(event.target).closest("tr").find("#email").text();
 
     var formData = new FormData();
-    formData.append('email', email); //Append email to FormData object
+    formData.append('email', email); // Append email to FormData object
 
     Swal.fire({
         title: 'Are you sure?',
@@ -318,9 +319,9 @@ function deleteCustomer(event) {
     loadCustomerData();
 }
 
-//row click
+//Row Click
 let index;
-$("#customer-tbl-body").on("click","tr", function (){
+$("#customer-tbl-body").on("click","tr", function () {
     index = $(this).index();
     let email = $(this).find("#email").text();
     console.log(email);
@@ -341,7 +342,7 @@ $("#customer-tbl-body").on("click","tr", function (){
     });
 });
 
-function setCustomerData(response){
+function setCustomerData(response) {
     $("select[name='level']").val(response.level);
     $("input[name='gender']").val([response.gender]);
     $("#cusDob").val(response.dob);
@@ -377,6 +378,8 @@ function setCustomerData(response){
     $("#cusContactNo").focus();
     $("#cusContactNo").val(response.contact_no);
 }
+
+
 
 window.loadCustomerData=loadCustomerData;
 window.deleteCustomer=deleteCustomer;
