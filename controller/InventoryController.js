@@ -3,7 +3,7 @@ function itemImageUploaded() {
     let file = document.querySelector('input[name=itemPic]').files[0];
     let reader = new FileReader();
     reader.onload = function () {
-        itemImageBase64 = reader.result.replace("data:","").replace(/^.+,/, "");
+        itemImageBase64 = reader.result.replace("data:", "").replace(/^.+,/, "");
     }
     reader.readAsDataURL(file);
 }
@@ -17,12 +17,12 @@ function viewImage(event) {
     event.stopPropagation();
     fileInput.click();
 
-    fileInput.addEventListener("change",function () {
+    fileInput.addEventListener("change", function() {
         let file = fileInput.files[0];
         if (file) {
             let reader = new FileReader();
             reader.onload = function () {
-                itemImageUpdateBase64 = reader.result.replace("data:","").replace(/^.+,/, "");
+                itemImageUpdateBase64 = reader.result.replace("data:", "").replace(/^.+,/, "");
             }
             reader.readAsDataURL(file);
 
@@ -31,7 +31,7 @@ function viewImage(event) {
     });
 }
 
-//save
+//Save
 $("#btnItemSave").on('click', () => {
     let itemName = $("input[name='itemName']").val();
     let itemPic = $("input[name='itemPic']").val();
@@ -131,7 +131,7 @@ $("#btnItemSave").on('click', () => {
     });
 });
 
-//get all data
+//Get All Data
 function loadItemData() {
     $.ajax({
         url: "http://localhost:8080/Scope/api/v1/inventory",
@@ -147,7 +147,7 @@ function loadItemData() {
         error: function (xhr, status, error) {
             console.error("Error:", xhr.responseText);
         }
-    })
+    });
 
     $.ajax({
         url: "http://localhost:8080/Scope/api/v1/supplier/getSupplierIds",
@@ -168,10 +168,10 @@ function loadItemData() {
         error: function (xhr, status, error) {
             console.error("Error:", xhr.responseText);
         }
-    })
+    });
 }
 
-//set data for table
+//set Data for table
 const setValue = (response) => {
     $("#item-tbl-body").empty();
     response.map((response) => {
@@ -205,7 +205,7 @@ const setValue = (response) => {
     })
 }
 
-//row click
+//Row Click
 let index;
 $("#item-tbl-body").on("click","tr", function () {
     index = $(this).index();
@@ -260,6 +260,9 @@ function setData(response) {
 $("#btnItemUpdate").on('click', () => {
     document.getElementById("itemForm").reset();
 })
+
+
+
 
 
 window.viewImage=viewImage;

@@ -3,31 +3,31 @@ function imageUploaded() {
     let file = document.querySelector('input[type=file]')['files'][0];
     let reader = new FileReader();
     reader.onload = function () {
-        base64String = reader.result.replace("data:","").replace(/^.+,/, "");
+        base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
     }
     reader.readAsDataURL(file);
 }
 
-//deleting employee
-function deleteEmployee(event){
-    event.stopPropagation(); //stop event propagation
+//deleting Employee
+function deleteEmployee(event) {
+    event.stopPropagation(); // Stop event propagation
     let email = $(event.target).closest("tr").find("#email").text();
     console.log(email);
     console.log("Deleted");
 
     var formData = new FormData();
-    formData.append('email', email); //Append email to FormData object
+    formData.append('email', email); // Append email to FormData object
 
     Swal.fire({
-        title: 'Are you sure ?',
-        text: "You want to delete row ?",
-        icon: 'Warning',
+        title: 'Are you sure?',
+        text: "You want delete row?",
+        icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#807f80',
         cancelButtonColor: '#ea0a03',
         confirmButtonText: 'Yes'
     }).then((result) => {
-        if (result.isConfirmed){
+        if (result.isConfirmed) {
             $.ajax({
                 url: "http://localhost:8080/Scope/api/v1/employee/delete",
                 type: "DELETE",
@@ -61,7 +61,7 @@ function deleteEmployee(event){
     loadData();
 }
 
-//load data
+//Load Data
 function loadData() {
     $.ajax({
         url: "http://localhost:8080/Scope/api/v1/employee",
@@ -80,7 +80,7 @@ function loadData() {
     });
 }
 
-//set data for table
+//set Data for table
 const setValue = (response) => {
     $("#employee-tbl-body").empty();
     response.map((response) => {
@@ -145,7 +145,7 @@ const setValue = (response) => {
     })
 }
 
-//employee save
+//Employee Save
 $("#btnSave").on('click', () => {
     if ($("input[name='password']").val() === $("#rePassword").val()) {
         let name = $("#name").val();
@@ -384,7 +384,7 @@ $("#btnSave").on('click', () => {
     }
 });
 
-//row click
+//Row Click
 let index;
 $("#employee-tbl-body").on("click","tr", function () {
     index = $(this).index();
@@ -405,6 +405,7 @@ $("#employee-tbl-body").on("click","tr", function () {
         }
     });
 });
+
 
 function setData(employee) {
     $("#name").focus();

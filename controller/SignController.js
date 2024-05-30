@@ -1,5 +1,5 @@
-//login action
-$("#btnLogin").on('click',() =>{
+//Login Action
+$("#btnLogin").on('click',()=>{
     var email = $("#txtEmail").val();
     var password = $("#txtPassword").val();
 
@@ -23,8 +23,8 @@ $("#btnLogin").on('click',() =>{
             $("#dashboardEmail").text(email);
             $("#sidenav-main").css('display','block');
             $("#topBar").css('display','block');
-            $(".nav-link").removeClass("active bg-dark-blue");
-            $(".dashboardFrom").addClass("active bg-dark-blue");
+            $(".nav-link").removeClass("active bg-gradient-primary");
+            $(".dashboardFrom").addClass("active bg-gradient-primary");
         },
         error: function(xhr, status, error) {
             console.error("Error:", xhr.responseText);
@@ -37,3 +37,4 @@ $("#btnLogin").on('click',() =>{
     $("#txtEmail").val(null);
     $("#txtPassword").val(null);
 })
+

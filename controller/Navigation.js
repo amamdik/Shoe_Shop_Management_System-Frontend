@@ -1,12 +1,12 @@
-$(document).ready(function () {
-    $(".nav-link-color").click(function () {
-        $(".nav-link-color").removeClass("active bg-dark-blue");
-        $(this).closest(".nav-link-color").addClass("active bg-dark-blue");
+$(document).ready(function() {
+    $(".nav-link-color").click(function() {
+        $(".nav-link-color").removeClass("active bg-gradient-primary");
+        $(this).closest(".nav-link-color").addClass("active bg-gradient-primary");
     });
 });
 
-//navigation
-$("#btnDashboard").on('click',() =>{
+//Navigation Part
+$("#btnDashboard").on('click',()=>{
     $("#signInForm").css('display','none');
     $("#dashboardForm").css('display','block');
     $("#employeeForm").css('display','none');
@@ -14,13 +14,12 @@ $("#btnDashboard").on('click',() =>{
     $("#customerForm").css('display','none');
     $("#sidenav-main").css('display','block');
     $("#inventoryForm").css('display','none');
-    $("#supplierForm").css('display','none');
+    $("#suppierForm").css('display','none');
     $("#saleForm").css('display','none');
     $("#sizeForm").css('display','none');
 })
 
-//employee form
-$("#btnEmployee").on('click',() =>{
+$("#btnEmployee").on('click',()=>{
     $("#signInForm").css('display','none');
     $("#dashboardForm").css('display','none');
     $("#employeeForm").css('display','block');
@@ -28,13 +27,12 @@ $("#btnEmployee").on('click',() =>{
     $("#customerForm").css('display','none');
     $("#sidenav-main").css('display','block');
     $("#inventoryForm").css('display','none');
-    $("#supplierForm").css('display','none');
+    $("#suppierForm").css('display','none');
     $("#saleForm").css('display','none');
     $("#sizeForm").css('display','none');
 })
 
-//signout form
-$("#btnSingOut").on('click',() =>{
+$("#btnSingOut").on('click',()=>{
     $("#signInForm").css('display','block');
     $("#dashboardForm").css('display','none');
     $("#employeeForm").css('display','none');
@@ -42,13 +40,12 @@ $("#btnSingOut").on('click',() =>{
     $("#customerForm").css('display','none');
     $("#sidenav-main").css('display','none');
     $("#inventoryForm").css('display','none');
-    $("#supplierForm").css('display','none');
+    $("#suppierForm").css('display','none');
     $("#saleForm").css('display','none');
     $("#sizeForm").css('display','none');
 })
 
-//customer form
-$("#btnCustomer").on('click',() =>{
+$("#btnCustomer").on('click',()=> {
     $("#signInForm").css('display','none');
     $("#dashboardForm").css('display','none');
     $("#employeeForm").css('display','none');
@@ -56,13 +53,12 @@ $("#btnCustomer").on('click',() =>{
     $("#customerForm").css('display','block');
     $("#sidenav-main").css('display','block');
     $("#inventoryForm").css('display','none');
-    $("#supplierForm").css('display','none');
+    $("#suppierForm").css('display','none');
     $("#saleForm").css('display','none');
     $("#sizeForm").css('display','none');
 })
 
-//inventory form
-$("#btnInventory").on('click',() =>{
+$("#btnInventory").on('click',()=>{
     $("#signInForm").css('display','none');
     $("#dashboardForm").css('display','none');
     $("#employeeForm").css('display','none');
@@ -70,13 +66,12 @@ $("#btnInventory").on('click',() =>{
     $("#customerForm").css('display','none');
     $("#sidenav-main").css('display','block');
     $("#inventoryForm").css('display','block');
-    $("#supplierForm").css('display','none');
+    $("#suppierForm").css('display','none');
     $("#saleForm").css('display','none');
     $("#sizeForm").css('display','none');
 })
 
-//supplier form
-$("#btnSupplier").on('click',() =>{
+$("#btnSupplier").on('click',()=>{
     $("#signInForm").css('display','none');
     $("#dashboardForm").css('display','none');
     $("#employeeForm").css('display','none');
@@ -84,13 +79,12 @@ $("#btnSupplier").on('click',() =>{
     $("#customerForm").css('display','none');
     $("#sidenav-main").css('display','block');
     $("#inventoryForm").css('display','none');
-    $("#supplierForm").css('display','block');
+    $("#suppierForm").css('display','block');
     $("#saleForm").css('display','none');
     $("#sizeForm").css('display','none');
 })
 
-//sale form
-$("#btnSale").on('click',() =>{
+$("#btnSale").on('click',()=>{
     $("#signInForm").css('display','none');
     $("#dashboardForm").css('display','none');
     $("#employeeForm").css('display','none');
@@ -98,13 +92,12 @@ $("#btnSale").on('click',() =>{
     $("#customerForm").css('display','none');
     $("#sidenav-main").css('display','block');
     $("#inventoryForm").css('display','none');
-    $("#supplierForm").css('display','none');
+    $("#suppierForm").css('display','none');
     $("#saleForm").css('display','block');
     $("#sizeForm").css('display','none');
 })
 
-//size form
-$("#btnSize").on('click',() =>{
+$("#btnSize").on('click',()=>{
     $("#signInForm").css('display','none');
     $("#dashboardForm").css('display','none');
     $("#employeeForm").css('display','none');
@@ -112,7 +105,7 @@ $("#btnSize").on('click',() =>{
     $("#customerForm").css('display','none');
     $("#sidenav-main").css('display','block');
     $("#inventoryForm").css('display','none');
-    $("#supplierForm").css('display','none');
+    $("#suppierForm").css('display','none');
     $("#saleForm").css('display','none');
     $("#sizeForm").css('display','block');
 })

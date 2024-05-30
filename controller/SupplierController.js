@@ -1,4 +1,4 @@
-//save
+//Save
 $("#btnSupplierSave").on('click', () => {
     let name = $("#supplierName").val();
     let category = $("select[name='category']").val();
@@ -154,8 +154,9 @@ $("#btnSupplierSave").on('click', () => {
     });
 });
 
+
 let supplier_id;
-//update
+//Update
 $("#btnSupplierUpdate").on('click', () => {
     let name = $("#supplierName").val();
     let category = $("select[name='category']").val();
@@ -476,7 +477,6 @@ function setSupplierData(response) {
     $("input[name='supplierEmail']").focus();
     $("input[name='supplierEmail']").val(response.email);
 }
-
 
 window.loadSupplierData=loadSupplierData;
 window.deleteSupplier=deleteSupplier;
