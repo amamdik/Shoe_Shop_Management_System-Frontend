@@ -14,7 +14,7 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 </head>
-<body class="g-sidenav-show  bg-gray-200">
+<body class="g-sidenav-show  bg-gradient-faded-dark-blue ">
 
 <!-- Header Section -->
 <nav id="topBar" class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" data-scroll="true">
@@ -52,7 +52,7 @@
                                             <span class="text-dark-blue font-weight-bolder">New message</span> from Olivia
                                         </h6>
                                         <p class="text-xs text-dark-blue mb-0">
-                                            <i class="fa fa-clock me-1"></i>
+                                            <i class="fa fa-clock me-0"></i>
                                             40 minutes ago
                                         </p>
                                     </div>
@@ -70,8 +70,8 @@
                                             <span class="text-dark-blue font-weight-bolder">New album</span> by Travis Scott
                                         </h6>
                                         <p class="text-xs text-dark-blue mb-0">
-                                            <i class="fa fa-clock me-1"></i>
-                                            2 day
+                                            <i class="fa fa-clock me-0"></i>
+                                            1 day
                                         </p>
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">dashboard</i>
                     </div>
-                    <span class="nav-link-text ms-1">Dashboard</span>
+                    <span class="nav-link-text ms-1">Admin Panel</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -262,10 +262,18 @@
     </div>
 </aside>
 
-<!--Dashboard Section-->
+<!--Admin dashboard-->
 <div id="dashboardForm">
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg navBar-padding">
+        <h1 class="text-center text-white mb-2 position-relative">Admin Dashboard</h1>
         <div class="container-fluid py-4">
+            <div class="row mb-4">
+                <div class="col-md-4 offset-md-8">
+                    <div class="input-group">
+                        <input type="date" id="dashboardDatePicker">
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                     <div class="card">
@@ -274,65 +282,42 @@
                                 <i class="material-icons opacity-10">weekend</i>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Today's Money</p>
-                                <h4 class="text-dark-blue mb-0">Rs. 14,000.00</h4>
+                                <p class="text-sm mb-0 text-capitalize">Total Sale</p>
+                                <h4 class="text-dark-blue mb-0">Rs. <span id="totalSale">0</span></h4>
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
-                        <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-info text-sm font-weight-bolder">+55% </span>than last week</p>
-                        </div>
+                        <div class="card-footer p-3"></div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                     <div class="card">
                         <div class="card-header p-3 pt-2">
-                            <div class="icon icon-lg icon-shape bg-dark-blue shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                            <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
                                 <i class="material-icons opacity-10">person</i>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                                <h4 class="text-dark-blue mb-0">65</h4>
+                                <p class="text-sm mb-0 text-capitalize">Total Profit</p>
+                                <h4 class="text-dark-blue mb-0">Rs. <span id="totalProfit">0</span></span></h4>
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
-                        <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-info text-sm font-weight-bolder">+3% </span>than last month</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-header p-3 pt-2">
-                            <div class="icon icon-lg icon-shape bg-warning shadow-warning text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">person</i>
-                            </div>
-                            <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">New Clients</p>
-                                <h4 class="text-dark-blue mb-0">89</h4>
-                            </div>
-                        </div>
-                        <hr class="dark horizontal my-0">
-                        <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-2%</span> than yesterday</p>
-                        </div>
+                        <div class="card-footer p-3"></div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6">
                     <div class="card">
                         <div class="card-header p-3 pt-2">
-                            <div class="icon icon-lg icon-shape bg-gradient-danger shadow-danger text-center border-radius-xl mt-n4 position-absolute">
+                            <div class="icon icon-lg icon-shape bg-gradient-warning shadow-warning text-center border-radius-xl mt-n4 position-absolute">
                                 <i class="material-icons opacity-10">weekend</i>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Sales</p>
-                                <h4 class="text-dark-blue mb-0">Rs. 65,340.00</h4>
+                                <p class="text-sm mb-0 text-capitalize">The most sale item qty</p>
+                                <h4 class="text-dark-blue mb-0"><span id="mostSaleItemQty">0</span></span></h4>
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
-                        <div class="card-footer p-3">
-                            <p class="mb-0"><span class="text-info text-sm font-weight-bolder">+5% </span>than yesterday</p>
-                        </div>
+                        <div class="card-footer p-3"></div>
                     </div>
                 </div>
             </div>
@@ -340,7 +325,7 @@
                 <div class="col-lg-4 col-md-6 mt-4 mb-4">
                     <div class="card z-index-2 ">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
-                            <div class="bg-dark-blue shadow-dark border-radius-lg py-3 pe-1">
+                            <div class="bg-gradient-info shadow-info border-radius-lg py-3 pe-1">
                                 <div class="chart">
                                     <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
                                 </div>
@@ -360,7 +345,7 @@
                 <div class="col-lg-4 col-md-6 mt-4 mb-4">
                     <div class="card z-index-2  ">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
-                            <div class="bg-gradient-warning shadow-warning border-radius-lg py-3 pe-1">
+                            <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
                                 <div class="chart">
                                     <canvas id="chart-line" class="chart-canvas" height="170"></canvas>
                                 </div>
@@ -373,371 +358,6 @@
                             <div class="d-flex ">
                                 <i class="material-icons text-sm my-auto me-1">schedule</i>
                                 <p class="mb-0 text-sm">just updated</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4 mb-3">
-                    <div class="card z-index-2 ">
-                        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
-                            <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
-                                <div class="chart">
-                                    <canvas id="chart-line-tasks" class="chart-canvas" height="170"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="text-dark-blue mb-0 ">Completed Tasks</h6>
-                            <p class="text-sm ">Last Campaign Performance</p>
-                            <hr class="dark horizontal">
-                            <div class="d-flex ">
-                                <i class="material-icons text-sm my-auto me-1">schedule</i>
-                                <p class="mb-0 text-sm">just updated</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-4">
-                <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
-                    <div class="card">
-                        <div class="card-header pb-0">
-                            <div class="row">
-                                <div class="col-lg-6 col-7">
-                                    <h6>Projects</h6>
-                                    <p class="text-sm mb-0">
-                                        <i class="fa fa-check text-info" aria-hidden="true"></i>
-                                        <span class="font-weight-bold ms-1">30 done</span> this month
-                                    </p>
-                                </div>
-                                <div class="col-lg-6 col-5 my-auto text-end">
-                                    <div class="dropdown float-lg-end pe-4">
-                                        <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-ellipsis-v text-secondary"></i>
-                                        </a>
-                                        <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body px-0 pb-2">
-                            <div class="table-responsive">
-                                <table class="table align-items-center mb-0">
-                                    <thead>
-                                    <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Companies</th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Members</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Budget</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completion</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex px-2 py-1">
-                                                <div>
-                                                    <img src="assests/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd">
-                                                </div>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">Material XD Version</h6>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="avatar-group mt-2">
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                                                    <img src="assests/img/team-1.jpg" alt="team1">
-                                                </a>
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                                                    <img src="assests/img/team-2.jpg" alt="team2">
-                                                </a>
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                                                    <img src="assests/img/team-3.jpg" alt="team3">
-                                                </a>
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                                                    <img src="assests/img/team-4.jpg" alt="team4">
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <span class="text-xs font-weight-bold"> $14,000 </span>
-                                        </td>
-                                        <td class="align-middle">
-                                            <div class="progress-wrapper w-75 mx-auto">
-                                                <div class="progress-info">
-                                                    <div class="progress-percentage">
-                                                        <span class="text-xs font-weight-bold">60%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex px-2 py-1">
-                                                <div>
-                                                    <img src="assests/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="atlassian">
-                                                </div>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">Add Progress Track</h6>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="avatar-group mt-2">
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                                                    <img src="assests/img/team-2.jpg" alt="team5">
-                                                </a>
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                                                    <img src="assests/img/team-4.jpg" alt="team6">
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <span class="text-xs font-weight-bold"> $3,000 </span>
-                                        </td>
-                                        <td class="align-middle">
-                                            <div class="progress-wrapper w-75 mx-auto">
-                                                <div class="progress-info">
-                                                    <div class="progress-percentage">
-                                                        <span class="text-xs font-weight-bold">10%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex px-2 py-1">
-                                                <div>
-                                                    <img src="assests/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7">
-                                                </div>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">Fix Platform Errors</h6>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="avatar-group mt-2">
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                                                    <img src="assests/img/team-3.jpg" alt="team8">
-                                                </a>
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                                                    <img src="assests/img/team-1.jpg" alt="team9">
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <span class="text-xs font-weight-bold"> Not set </span>
-                                        </td>
-                                        <td class="align-middle">
-                                            <div class="progress-wrapper w-75 mx-auto">
-                                                <div class="progress-info">
-                                                    <div class="progress-percentage">
-                                                        <span class="text-xs font-weight-bold">100%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex px-2 py-1">
-                                                <div>
-                                                    <img src="assests/img/small-logos/logo-spotify.svg" class="avatar avatar-sm me-3" alt="spotify">
-                                                </div>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="avatar-group mt-2">
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                                                    <img src="assests/img/team-4.jpg" alt="user1">
-                                                </a>
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                                                    <img src="assests/img/team-3.jpg" alt="user2">
-                                                </a>
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                                                    <img src="assests/img/team-4.jpg" alt="user3">
-                                                </a>
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                                                    <img src="assests/img/team-1.jpg" alt="user4">
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <span class="text-xs font-weight-bold"> $20,500 </span>
-                                        </td>
-                                        <td class="align-middle">
-                                            <div class="progress-wrapper w-75 mx-auto">
-                                                <div class="progress-info">
-                                                    <div class="progress-percentage">
-                                                        <span class="text-xs font-weight-bold">100%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex px-2 py-1">
-                                                <div>
-                                                    <img src="assests/img/small-logos/logo-jira.svg" class="avatar avatar-sm me-3" alt="jira">
-                                                </div>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">Add the New Pricing Page</h6>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="avatar-group mt-2">
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                                                    <img src="assests/img/team-4.jpg" alt="user5">
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <span class="text-xs font-weight-bold"> $500 </span>
-                                        </td>
-                                        <td class="align-middle">
-                                            <div class="progress-wrapper w-75 mx-auto">
-                                                <div class="progress-info">
-                                                    <div class="progress-percentage">
-                                                        <span class="text-xs font-weight-bold">25%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-info w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="25"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex px-2 py-1">
-                                                <div>
-                                                    <img src="assests/img/small-logos/logo-invision.svg" class="avatar avatar-sm me-3" alt="invision">
-                                                </div>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm">Redesign New Online Shop</h6>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="avatar-group mt-2">
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                                                    <img src="assests/img/team-1.jpg" alt="user6">
-                                                </a>
-                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                                                    <img src="assests/img/team-4.jpg" alt="user7">
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <span class="text-xs font-weight-bold"> $2,000 </span>
-                                        </td>
-                                        <td class="align-middle">
-                                            <div class="progress-wrapper w-75 mx-auto">
-                                                <div class="progress-info">
-                                                    <div class="progress-percentage">
-                                                        <span class="text-xs font-weight-bold">40%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-info w-40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header pb-0">
-                            <h6>Orders overview</h6>
-                            <p class="text-sm">
-                                <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
-                                <span class="font-weight-bold">24%</span> this month
-                            </p>
-                        </div>
-                        <div class="card-body p-3">
-                            <div class="timeline timeline-one-side">
-                                <div class="timeline-block mb-3">
-                  <span class="timeline-step">
-                    <i class="material-icons text-success text-gradient">notifications</i>
-                  </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">$2400, Design changes</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">22 DEC 7:20 PM</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-block mb-3">
-                  <span class="timeline-step">
-                    <i class="material-icons text-danger text-gradient">code</i>
-                  </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">New order #1832412</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-block mb-3">
-                  <span class="timeline-step">
-                    <i class="material-icons text-info text-gradient">shopping_cart</i>
-                  </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">Server payments for April</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 9:34 PM</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-block mb-3">
-                  <span class="timeline-step">
-                    <i class="material-icons text-warning text-gradient">credit_card</i>
-                  </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order #4395133</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-block mb-3">
-                  <span class="timeline-step">
-                    <i class="material-icons text-primary text-gradient">key</i>
-                  </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">Unlock packages for development</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">18 DEC 4:54 AM</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-block">
-                  <span class="timeline-step">
-                    <i class="material-icons text-dark text-gradient">payments</i>
-                  </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -888,9 +508,9 @@
                 </div>
 
                 <div class="btn-block mt-6">
-                    <button class="bg-dark-blue" id="btnSave" type="button">Save</button>
-                    <button class="bg-dark-blue" id="btnUpdate" type="button">Update</button>
-                    <button class="bg-dark-blue" id="reset" type="button">Reset</button>
+                    <button id="btnSave" type="button" class="bg-dark-blue">Save</button>
+                    <button id="btnUpdate" type="button" class="bg-dark-blue">Update</button>
+                    <button id="reset" type="button" class="bg-dark-blue">Reset</button>
                 </div>
             </form>
         </div>
@@ -1047,9 +667,9 @@
                 </div>
 
                 <div class="btn-block mt-6">
-                    <button class="bg-dark-blue" id="btnCusSave" type="button">Save</button>
-                    <button class="bg-dark-blue" id="btnCusUpdate" type="button">Update</button>
-                    <button class="bg-dark-blue" id="cusReset" type="reset">Reset</button>
+                    <button id="btnCusSave" type="button" class="bg-dark-blue">Save</button>
+                    <button id="btnCusUpdate" type="button" class="bg-dark-blue">Update</button>
+                    <button id="cusReset" type="reset" class="bg-dark-blue">Reset</button>
                 </div>
             </form>
         </div>
@@ -1146,9 +766,9 @@
                 </div>
 
                 <div class="btn-block mt-6">
-                    <button class="bg-dark-blue" id="btnItemSave" type="button">Save</button>
-                    <button class="bg-dark-blue" id="btnItemUpdate" type="button">Update</button>
-                    <button class="bg-dark-blue" id="btnItemreset" type="reset">Reset</button>
+                    <button id="btnItemSave" type="button" class="bg-dark-blue">Save</button>
+                    <button id="btnItemUpdate" type="button" class="bg-dark-blue">Update</button>
+                    <button id="btnItemreset" type="reset" class="bg-dark-blue">Reset</button>
                 </div>
             </form>
         </div>
@@ -1175,6 +795,115 @@
 
                                         </thead>
                                         <tbody id="item-tbl-body"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </main>
+</div>
+
+<!--Size form Section-->
+<div id="sizeForm">
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg navBar-padding">
+        <div class="testbox">
+            <form>
+                <div class="banner">
+                    <h1 class="text-dark-blue">Size Manage Form</h1>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <select id="itemID" aria-label="Default select example" name="itemID" class="form-control">
+                                <option selected>Select Item</option>
+                            </select>
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <label class="form-label">Size</label>
+                            <input name="itemSize" type="number" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Item Quantity</label>
+                            <input name="itemQuantity" type="number" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <select id="itemStatus" aria-label="Default select example" class="form-control">
+                                <option selected>Select Status</option>
+                                <option>Low</option>
+                                <option>Available</option>
+                                <option>Not Available</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Profit Margin</label>
+                            <input name="itemProfitMargin" type="number" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <label class="form-label">Unit Price-Sale</label>
+                            <input name="itemUnitPrice-Sale" type="number" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name-item">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <label class="form-label">Unit Price-Buy</label>
+                            <input name="itemUnitPrice-Buy" type="number" class="form-control">
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <label class="form-label">Expected Profit</label>
+                            <input name="itemExpectedProfit" type="number" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-block mt-6">
+                    <button id="btnSizeSave" type="button" class="bg-dark-blue">Save</button>
+                    <button id="btnSizeUpdate" type="button" class="bg-dark-blue">Update</button>
+                    <button id="btnSizereset" type="reset" class="bg-dark-blue">Reset</button>
+                </div>
+            </form>
+        </div>
+        <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card my-4">
+                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                                <div class="bg-dark-blue shadow-dark border-radius-lg pt-4 pb-3">
+                                    <h6 class="text-white text-capitalize ps-3">Inventory table</h6>
+                                </div>
+                            </div>
+                            <div class="card-body px-0 pb-2">
+                                <div class="table-responsive p-0">
+                                    <table class="table align-items-center mb-0">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-5 pe-5">Item ID</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-4">Size</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-3">Quantity</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Profit Margin</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Unit Price-Sale</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Unit Price-Buy</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Expeted profit</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-4">Status</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder ps-3">Delete</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="size-tbl-body"></tbody>
                                     </table>
                                 </div>
                             </div>
@@ -1267,9 +996,9 @@
                 </div>
 
                 <div class="btn-block mt-6">
-                    <button class="bg-dark-blue" id="btnSupplierSave" type="button">Save</button>
-                    <button class="bg-dark-blue" id="btnSupplierUpdate" type="button">Update</button>
-                    <button class="bg-dark-blue" id="btnSupplierReset" type="reset">Reset</button>
+                    <button id="btnSupplierSave" type="button" class="bg-dark-blue">Save</button>
+                    <button id="btnSupplierUpdate" type="button" class="bg-dark-blue">Update</button>
+                    <button id="btnSupplierReset" type="reset" class="bg-dark-blue">Reset</button>
                 </div>
             </form>
         </div>
@@ -1309,8 +1038,112 @@
 </div>
 
 <!--Sale form Section-->
+<div id="saleForm">
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg navBar-padding">
+        <div class="testbox">
+            <form>
+                <div class="banner">
+                    <h1 class="text-dark-blue">Sale Form</h1>
+                </div>
+                <div class="item">
+                    <div class="name-item pt-3 pb-3">
+                        <div class="input-group input-group-outline w-lg-45 ms-4">
+                            <select id="saleCustomerID" name="category" class="form-control" aria-label="Default select example">
+                                <option selected>Select Customer</option>
+                                <option>Customer Not Registered</option>
+                            </select>
+                        </div>
+                        <div class="input-group input-group-outline w-lg-45 me-5">
+                            <input id="saleCustomerName" value="Enter Customer Name" name="supplierAddress1" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
 
-<!--Size form Section-->
+                <div class="item">
+                    <div class="item">
+                        <div class="name-item">
+                            <div class="input-group input-group-outline w-lg-45 ms-4">
+                                <select id="saleItemIDs" class="form-control" name="category form-control" aria-label="Default select example">
+                                    <option selected>Select Item</option>
+                                </select>
+                            </div>
+                            <div class="input-group input-group-outline marginSet">
+                                <select id="saleItemSize" name="category" class="form-control" aria-label="Default select example">
+                                    <option selected>Select Size</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="name-item" id="itemData" style="gap: 10px;">
+                            <div class="input-group input-group-outline w-lg-30 ms-4">
+                                <input id="saleItemDesc" name="itemDesc" type="text" class="form-control" placeholder="Item Description" disabled>
+                            </div>
+                            <div id="itemQuantity" class="input-group input-group-outline w-lg-25 me-12">
+                                <input id="saleItemQuantity" name="itemQuantity" placeholder="Quantity" type="number" class="form-control fo" disabled>
+                            </div>
+                            <div id="itemUnitePrice" class="input-group input-group-outline w-lg-25 marginRight">
+                                <input id="saleItemPrice" name="txtUnitPrice" type="number" class="form-control" placeholder="Unit Price" disabled>
+                            </div>
+                            <div class="input-group input-group-outline w-lg-0">
+                                <label class="form-label">Quantity</label>
+                                <input id="itemSizeQuantity" name="itemSizeQuantity" type="number" class="form-control">
+                            </div>
+                            <button id="btnAdd" class="bg-dark-blue w-10" type="button">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body px-0 pb-2 text">
+                    <p class="text-uppercase text-sm text-center mb-0 mt-6">
+                        ------------------------------------------------------------------------------------------
+                        Cart Details
+                        ------------------------------------------------------------------------------------------
+                    </p>
+                    <div class="table-responsive p-0">
+                        <table class="table align-items-center mb-0">
+                            <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder pe-2">Item ID</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder pe-2">Item Name</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder pe-2">Size</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder pe-2">Quantity</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder pe-2">Unite Price</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder pe-2">Total</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder pe-2">Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody id="sale-tbl-body"></tbody>
+                        </table>
+                    </div>
+                    <p class="text-end mt-4 me-8 font-weight-bold">Net Total :
+                        <span id="saleNetTotal"></span>
+                    </p>
+                </div>
+
+                <div class="input-group input-group-outline marginSet ms-4" style="display: flex; gap: 10px; flex-wrap: nowrap;">
+                    <select id="salePaymentType1" name="category" class="form-control" aria-label="Default select example">
+                        <option selected>Select Payment Method</option>
+                        <option value="cash">Cash</option>
+                        <option value="card">Card</option>
+                    </select>
+                    <div class="input-group input-group-outline w-lg-10">
+                        <label class="form-label" id="amountLabel" for="saleAmount"></label>
+                        <input id="saleAmount" name="saleAmount" type="number" class="form-control">
+                    </div>
+                </div>
+
+                <button class="bg-dark-blue position-absolute bottom-12 end-6" id="btnSalePlaceOrder" type="button">Place Order</button>
+
+                <div class="btn-block mt-6">
+                    <button id="btnSaleReset" type="reset" class="bg-dark-blue">Reset</button>
+                </div>
+            </form>
+        </div>
+        <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+            <div class="container-fluid py-4"></div>
+        </main>
+    </main>
+</div>
 
 
 <script src="assests/js/popper.min.js"></script>
@@ -1575,6 +1408,46 @@
         }
         Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+</script>
+
+<!--<script async defer src="https://buttons.github.io/buttons.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="controller/EmployeeController.js"></script>
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/Navigation.js"></script>
+<script type="module" src="controller/SignController.js"></script>
+<script type="module" src="controller/InventoryController.js"></script>
+<script type="module" src="controller/SupplierController.js"></script>
+<script type="module" src="controller/SizeController.js"></script>
+<script type="module" src="controller/SaleController.js"></script>
+<script type="module" src="controller/DashboardController.js"></script>
+<script src="assests/js/material-dashboard.js?v=3.1.0"></script>
+<script src="assests/lib/jquery.min.js"></script>
+
+<script>
+    //Correct code
+    // $("#topBar").css('display','none');
+    // $("#signInForm").css('display','block');
+    // $("#dashboardForm").css('display','none');
+    // $("#employeeForm").css('display','none');
+    // $("#sidenav-main").css('display','none');
+    // $("#customerForm").css('display','none');
+    // $("#inventoryForm").css('display','none');
+    // $("#suppierForm").css('display','none');
+    // $("#saleForm").css('display','none');
+    // $("#sizeForm").css('display','none');
+
+
+    $("#topBar").css('display','block');
+    $("#signInForm").css('display','none');
+    $("#dashboardForm").css('display','block');
+    $("#employeeForm").css('display','none');
+    $("#sidenav-main").css('display','block');
+    $("#customerForm").css('display','none');
+    $("#inventoryForm").css('display','none');
+    $("#suppierForm").css('display','none');
+    $("#saleForm").css('display','none');
+    $("#sizeForm").css('display','none');
 </script>
 </body>
 </html>
