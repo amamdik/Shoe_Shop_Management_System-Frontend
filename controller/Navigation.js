@@ -109,3 +109,4 @@ $("#btnSize").on('click',()=>{
     $("#saleForm").css('display','none');
     $("#sizeForm").css('display','block');
 })
+

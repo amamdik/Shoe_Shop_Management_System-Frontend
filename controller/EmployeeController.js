@@ -8,7 +8,7 @@ function imageUploaded() {
     reader.readAsDataURL(file);
 }
 
-//deleting Employee
+//Delete Employee
 function deleteEmployee(event) {
     event.stopPropagation(); // Stop event propagation
     let email = $(event.target).closest("tr").find("#email").text();

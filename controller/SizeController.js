@@ -249,5 +249,14 @@ function deleteSize(event) {
     loadItemData();
 }
 
+
+
+
+
+
+
+
+
+
 window.deleteSize=deleteSize;
 window.loadSizeData=loadSizeData;
