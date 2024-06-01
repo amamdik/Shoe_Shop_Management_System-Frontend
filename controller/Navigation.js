@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $(".nav-link-color").click(function() {
-        $(".nav-link-color").removeClass("active bg-gradient-primary");
-        $(this).closest(".nav-link-color").addClass("active bg-gradient-primary");
+        $(".nav-link-color").removeClass("active bg-dark-blue");
+        $(this).closest(".nav-link-color").addClass("active bg-dark-blue");
     });
 });
 

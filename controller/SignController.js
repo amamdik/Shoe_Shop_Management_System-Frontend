@@ -31,8 +31,8 @@ $("#btnLogin").on('click',()=>{
                 $("#dashboardEmail").text(email);
                 $("#sidenav-main").css('display','block');
                 $("#topBar").css('display','block');
-                $(".nav-link").removeClass("active bg-gradient-primary");
-                $(".dashboardFrom").addClass("active bg-gradient-primary");
+                $(".nav-link").removeClass("active bg-dark-blue");
+                $(".dashboardFrom").addClass("active bg-dark-blue");
             }
         },
         error: function(xhr, status, error) {
