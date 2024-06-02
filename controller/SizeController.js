@@ -211,8 +211,8 @@ function deleteSize(event) {
         text: "You want delete row?",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#807f80',
-        cancelButtonColor: '#ea0a03',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
         confirmButtonText: 'Yes'
     }).then((result) => {
         if (result.isConfirmed) {
